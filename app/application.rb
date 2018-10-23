@@ -31,7 +31,7 @@ class Application
           resp.write "We don't have that item"
         else
           @@items << item
-            resp.write "#{i}\n"
+            resp.write "added#{item}\n"
           end
       end
       
