@@ -27,10 +27,10 @@ class Application
       
       elsif req.path.match(/add/)
       search_term = req.params["item"]
-      if @@items.include?(item)
-        @@items << item
+      if !@@items.include?(item)
+        resp.write "We don't have that item"
       else
-        @@cart.each do |i|
+        @@items << item
           resp.write "#{i}\n"
         end
       end
