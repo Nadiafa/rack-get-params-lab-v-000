@@ -19,10 +19,10 @@ class Application
     elsif req.path.match(/cart/)
       search_term = req.params["q"]
       if @@cart.empty?
-        resp.write ""
-        return "#{search_term} is one of our items"
+        resp.write "Your cart is empty"
       else
-        return "Couldn't find #{search_term}"
+        @@cart.
+        resp.write "Couldn't find #{search_term}"
       end
     
     
