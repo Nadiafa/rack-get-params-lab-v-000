@@ -27,8 +27,8 @@ class Application
       
       elsif req.path.match(/add/)
       search_term = req.params["item"]
-      if @@cart.empty?
-        resp.write "Your cart is empty"
+      if @@items.include?(item)
+        @@items << item
       else
         @@cart.each do |i|
           resp.write "#{i}\n"
