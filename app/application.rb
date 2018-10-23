@@ -27,13 +27,12 @@ class Application
       
       elsif req.path.match(/add/)
       search_term = req.params["item"]
-        if !@@items.include?(item)
-          resp.write "We don't have that item"
-        else
+        if @@items.include?(item)
           @@items << item
-          resp.write "added#{item}\n"
+          resp.write "added #{item}\n"
+        else
+          resp.write "We don't have that item"
         end
-        
       end
       
       
