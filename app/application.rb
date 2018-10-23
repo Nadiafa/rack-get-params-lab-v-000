@@ -18,7 +18,8 @@ class Application
     
     elsif req.path.match(/cart/)
       search_term = req.params["q"]
-      if @@cart.include?(search_term)
+      if @@cart.empty?
+        resp.write 
         return "#{search_term} is one of our items"
       else
         return "Couldn't find #{search_term}"
